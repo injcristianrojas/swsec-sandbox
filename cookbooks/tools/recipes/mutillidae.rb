@@ -9,7 +9,7 @@ script "mutillidae_install" do
   user "root"
   cwd "/tmp"
   code <<-EOH
-  wget http://ufpr.dl.sourceforge.net/project/mutillidae/mutillidae-project/LATEST-mutillidae-2.1.18.zip -O mutillidae.zip
+  wget http://ufpr.dl.sourceforge.net/project/mutillidae/mutillidae-project/mutillidae-2.1.18.zip -O mutillidae.zip
   unzip -d /var/www/ -o mutillidae.zip
   EOH
 end
