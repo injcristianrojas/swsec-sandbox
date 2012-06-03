@@ -14,12 +14,14 @@ script "mutillidae_install" do
   EOH
 end
 
-template "/var/www/mutillidae/config.inc" do
-  source "config.inc.erb"
-  mode '0644'
-  variables(
-    :root_pass => "root123"
-  )
+node[:mysql][:server_root_password].each do |password|
+  template "/var/www/mutillidae/config.inc" do
+    source "config.inc.erb"
+    mode '0644'
+    variables(
+      :root_pass => password
+    )
+  end
 end
 
 script "mutillidae_db_setup" do

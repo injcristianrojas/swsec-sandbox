@@ -63,16 +63,25 @@ Vagrant::Config.run do |config|
   # to this Vagrantfile), and adding some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
-     chef.cookbooks_path = "cookbooks"
-     chef.add_recipe "apt"
-     chef.add_recipe "tools::locale_correction"
-     chef.add_recipe "tools::install_packages"
-     chef.add_recipe "tools::install_gems"
-     chef.add_recipe "tools::webgoat"
-     chef.add_recipe "tools::hacme_casino"
-     chef.add_recipe "tools::mutillidae"
-     # You may also specify custom JSON attributes:
-     chef.json = { :mysql_server_root_password => "123" }
+	chef.cookbooks_path = "cookbooks"
+	chef.add_recipe "apt"
+	chef.add_recipe "tools::locale_correction"
+	chef.add_recipe "tools::install_packages"
+	chef.add_recipe "tools::install_gems"
+	chef.add_recipe "tools::webgoat"
+	chef.add_recipe "tools::hacme_casino"
+	chef.add_recipe "tools::mutillidae"
+	# You may also specify custom JSON attributes:
+	chef.json = {
+		:system => {
+			:users => [
+				['tester', 'tester_pass']
+			]
+		},
+		:mysql => {
+			:server_root_password => "holi123"
+		}
+	}
    end
 
   # Enable provisioning with chef server, specifying the chef server URL,
