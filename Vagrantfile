@@ -80,6 +80,20 @@ Vagrant::Config.run do |config|
 		},
 		:mysql => {
 			:server_root_password => "holi123"
+		},
+		:tomcat => {
+			:roles => [
+				'tomcat',
+				'webgoat_basic',
+				'webgoat_admin',
+				'webgoat_user'
+			],
+			:users => [
+				['tomcat', 'tomcat', 'tomcat'],
+				['guest', 'guest', 'webgoat_user'],
+				['webgoat', 'webgoat', 'webgoat_admin'],
+				['basic', 'basic', 'webgoat_user,webgoat_basic']
+			]
 		}
 	}
    end

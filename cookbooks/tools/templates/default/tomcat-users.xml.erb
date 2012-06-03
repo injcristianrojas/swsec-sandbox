@@ -16,12 +16,10 @@
   limitations under the License.
 -->
 <tomcat-users>
-  <role rolename="tomcat"/>
-  <role rolename="webgoat_basic"/>
-  <role rolename="webgoat_admin"/>
-  <role rolename="webgoat_user"/>
-  <user password="tomcat" roles="tomcat" username="tomcat"/>
-  <user password="guest" roles="webgoat_user" username="guest"/>
-  <user password="webgoat" roles="webgoat_admin" username="webgoat"/>
-  <user password="basic" roles="webgoat_user,webgoat_basic" username="basic"/>
+<% @roles.each do |role| %>
+	<role rolename="<%= role %>"/>
+<% end %>
+<% @users.each do |user,password,roles| %>
+	<user username="<%= user %>" password="<%= password %>" roles="<%= roles %>" />
+<% end %>
 </tomcat-users>

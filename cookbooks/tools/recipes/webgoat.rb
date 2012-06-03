@@ -21,6 +21,10 @@ template "/etc/tomcat6/tomcat-users.xml" do
   owner "root"
   group "tomcat6"
   mode "0640"
+  variables(
+    :users => node[:tomcat][:users],
+    :roles => node[:tomcat][:roles]
+  )
 end
 
 script "tomcat_restart" do
