@@ -65,12 +65,8 @@ Vagrant::Config.run do |config|
   config.vm.provision :chef_solo do |chef|
 	chef.cookbooks_path = "cookbooks"
 	chef.add_recipe "apt"
-	chef.add_recipe "tools::locale_correction"
-	chef.add_recipe "tools::install_packages"
-	chef.add_recipe "tools::install_gems"
-	chef.add_recipe "tools::webgoat"
-	chef.add_recipe "tools::hacme_casino"
-	chef.add_recipe "tools::mutillidae"
+  chef.add_recipe "webgoat"
+  chef.add_recipe "mutillidae"
 	# You may also specify custom JSON attributes:
 	chef.json = {
 		:system => {
@@ -79,7 +75,7 @@ Vagrant::Config.run do |config|
 			]
 		},
 		:mysql => {
-			:server_root_password => "holi123"
+			:server_root_password => "dba123"
 		},
 		:tomcat => {
 			:roles => [

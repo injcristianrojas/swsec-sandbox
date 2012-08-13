@@ -1,11 +1,4 @@
-# Paquetes Ubuntu
-pkgs = %w{tomcat6}
-
-pkgs.each do |pkg|
-    package pkg do
-        action :install
-    end
-end
+package "tomcat6"
 
 script "webgoat_download" do
   interpreter "bash"
@@ -27,10 +20,6 @@ template "/etc/tomcat6/tomcat-users.xml" do
   )
 end
 
-script "tomcat_restart" do
-  interpreter "bash"
-  user "root"
-  code <<-EOH
-  service tomcat6 restart
-  EOH
+service "tomcat6" do
+  action :restart
 end
