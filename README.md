@@ -44,10 +44,10 @@ en su equipo, instale Vagrant utilizando `gem install vagrant`. Si no está, baj
 
 En un directorio de su máquina, escriba
 
-    git clone ...
+    git clone git://github.com/injcristianrojas/swsec-sandbox.git
 
-Esto generará un directorio llamado ``.
-Ingrese a él y baje allí la máquina virtual base Ubuntu Lucid 32 desde <http://files.vagrantup.com/lucid32.box>.
+Esto generará un directorio llamado `swsec-sandbox`. Ingrese a él y baje allí la máquina virtual
+base Ubuntu Lucid 32 desde <http://files.vagrantup.com/lucid32.box>.
 Ya estando lista la máquina virtual base, agréguela a Vagrant escribiendo
 
     vagrant box add lucid32 lucid32.box
@@ -64,3 +64,11 @@ el software que necesita para funcionar. Cuando termine este proceso, escriba
 y tendrá acceso a la máquina. Para detenerla Usted puede pausarla o apagarla por completo. Si
 desea pausarla haga `vagrant suspend`. Para iniciarla de nuevo escriba `vagrant resume`. Si desea
 apagarla escriba `vagrant halt`, y para reiniciarla escriba `vagrant reload --no-provision`
+
+## Uso de la máquina virtual ##
+
+La dirección IP de la máquina virtual es 33.33.33.100. Si desea acceder a las herramientas
+web vulnerables ingrese a:
+
+* OWASP Mutillidae: http://33.33.33.100/mutillidae/
+* OWASP WebGoat: http://33.33.33.100:8080/WebGoat/attack (user/password: guest/guest)
