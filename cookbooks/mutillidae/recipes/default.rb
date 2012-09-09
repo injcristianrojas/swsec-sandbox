@@ -5,7 +5,6 @@ include_recipe "php::module_mysql"
 include_recipe "apache2::mod_php5"
 
 package "curl"
-package "unzip"
 
 script "mutillidae_install" do
   interpreter "bash"

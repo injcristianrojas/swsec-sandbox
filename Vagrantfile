@@ -71,11 +71,6 @@ Vagrant::Config.run do |config|
   chef.add_recipe "rips"
 	# You may also specify custom JSON attributes:
 	chef.json = {
-		:system => {
-			:users => [
-				['tester', 'tester_pass']
-			]
-		},
 		:mysql => {
 			:server_root_password => "dba123"
 		},
