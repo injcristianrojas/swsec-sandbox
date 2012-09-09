@@ -34,7 +34,7 @@ Vagrant::Config.run do |config|
   # Share an additional folder to the guest VM. The first argument is
   # an identifier, the second is the path on the guest to mount the
   # folder, and the third is the path on the host to the actual folder.
-  # config.vm.share_folder "v-data", "/vagrant_data", "../data"
+  config.vm.share_folder "v-data", "/vagrant_folder", "vagrant_folder"
 
   # Enable provisioning with Puppet stand alone.  Puppet manifests
   # are contained in a directory path relative to this Vagrantfile.
@@ -67,7 +67,7 @@ Vagrant::Config.run do |config|
 	chef.add_recipe "apt"
   chef.add_recipe "basic-config"
   chef.add_recipe "webgoat"
-  chef.add_recipe "mutillidae_download"
+  chef.add_recipe "mutillidae"
   chef.add_recipe "rips"
 	# You may also specify custom JSON attributes:
 	chef.json = {
