@@ -72,3 +72,10 @@ web vulnerables ingrese a:
 
 * OWASP Mutillidae: http://33.33.33.100/mutillidae/
 * OWASP WebGoat: http://33.33.33.100:8080/WebGoat/attack (user/password: guest/guest)
+
+## Licencias ##
+
+Las licencias del software distribuido son las siguientes:
+
+* OWASP Mutillidae: [Creative Commons Reconocimiento - CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
+* OWASP WebGoat: [GPL](http://www.gnu.org/licenses/gpl.html) y [LGPL](http://www.gnu.org/licenses/lgpl.html)
