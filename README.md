@@ -36,7 +36,7 @@ de paquetes que estas provee. Instale VirtualBox y Ruby utilizando desde la line
 
 ### Mac ###
 
-Para instalar VirtualBox en Windows, bájelo desde <http://www.virtualbox.org>. Si ruby se encuentra instalado
+Para instalar VirtualBox en Mac, bájelo desde <http://www.virtualbox.org>. Si ruby se encuentra instalado
 en su equipo, instale Vagrant utilizando `gem install vagrant`. Si no está, baje el paquete .dmg desde
 <http://downloads.vagrantup.com/>.
 

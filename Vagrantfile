@@ -63,33 +63,33 @@ Vagrant::Config.run do |config|
   # to this Vagrantfile), and adding some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
-	chef.cookbooks_path = "cookbooks"
-	chef.add_recipe "apt"
-  chef.add_recipe "basic-config"
-  chef.add_recipe "webgoat"
-  chef.add_recipe "mutillidae"
-  chef.add_recipe "rips"
-	# You may also specify custom JSON attributes:
-	chef.json = {
-		:mysql => {
-			:server_root_password => "dba123"
-		},
-		:tomcat => {
-			:roles => [
-				'tomcat',
-				'webgoat_basic',
-				'webgoat_admin',
-				'webgoat_user'
-			],
-			:users => [
-				['tomcat', 'tomcat', 'tomcat'],
-				['guest', 'guest', 'webgoat_user'],
-				['webgoat', 'webgoat', 'webgoat_admin'],
-				['basic', 'basic', 'webgoat_user,webgoat_basic']
-			]
-		}
-	}
-   end
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe "apt"
+    chef.add_recipe "basic-config"
+    chef.add_recipe "webgoat"
+    chef.add_recipe "mutillidae"
+    chef.add_recipe "rips"
+    # You may also specify custom JSON attributes:
+    chef.json = {
+      :mysql => {
+        :server_root_password => "dba123"
+      },
+      :tomcat => {
+        :roles => [
+          'tomcat',
+          'webgoat_basic',
+          'webgoat_admin',
+          'webgoat_user'
+        ],
+        :users => [
+          ['tomcat', 'tomcat', 'tomcat'],
+          ['guest', 'guest', 'webgoat_user'],
+          ['webgoat', 'webgoat', 'webgoat_admin'],
+          ['basic', 'basic', 'webgoat_user,webgoat_basic']
+        ]
+      }
+    }
+  end
 
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
