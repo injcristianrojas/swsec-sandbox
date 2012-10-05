@@ -69,6 +69,7 @@ Vagrant::Config.run do |config|
     chef.add_recipe "webgoat"
     chef.add_recipe "mutillidae"
     chef.add_recipe "rips"
+    chef.add_recipe "sqlmap"
     # You may also specify custom JSON attributes:
     chef.json = {
       :mysql => {
