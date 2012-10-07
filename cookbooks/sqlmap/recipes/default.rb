@@ -1,9 +1,9 @@
 include_recipe "git"
 
-git "/opt/sqlmap/" do
+git "/home/vagrant/sqlmap/" do
   repository "git://github.com/sqlmapproject/sqlmap.git"
   reference "master"
   action :sync
-  user "root"
-  group "root"
+  user "vagrant"
+  group "vagrant"
 end
