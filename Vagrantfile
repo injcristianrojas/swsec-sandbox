@@ -66,10 +66,10 @@ Vagrant::Config.run do |config|
     chef.cookbooks_path = "cookbooks"
     chef.add_recipe "apt"
     chef.add_recipe "basic-config"
-    chef.add_recipe "webgoat"
     chef.add_recipe "mutillidae"
-    chef.add_recipe "rips"
-    chef.add_recipe "sqlmap"
+    chef.add_recipe "webgoat"
+    #chef.add_recipe "rips"
+    #chef.add_recipe "sqlmap"
     # You may also specify custom JSON attributes:
     chef.json = {
       :mysql => {
