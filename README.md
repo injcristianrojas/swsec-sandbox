@@ -47,10 +47,10 @@ En un directorio de su máquina, escriba
     git clone git://github.com/injcristianrojas/swsec-sandbox.git
 
 Esto generará un directorio llamado `swsec-sandbox`. Ingrese a él y baje allí la máquina virtual
-base Ubuntu Lucid 32 desde <http://files.vagrantup.com/lucid32.box>.
+base Ubuntu Precise (32 bits) desde <http://files.vagrantup.com/precise32.box>.
 Ya estando lista la máquina virtual base, agréguela a Vagrant escribiendo
 
-    vagrant box add lucid32 lucid32.box
+    vagrant box add precise32 precise32.box
 
 Ya estando agregada la máquina virtual, lo que resta es prepararla. Escriba
 
