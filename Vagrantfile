@@ -20,7 +20,8 @@ Vagrant::Config.run do |config|
   # via the IP. Host-only networks can talk to the host machine as well as
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
-  config.vm.network :hostonly, "33.33.33.100"
+  host_ip = "33.33.33.100"
+  config.vm.network :hostonly, host_ip
 
   # Assign this VM to a bridged network, allowing you to connect directly to a
   # network using the host's network device. This makes the VM appear as another
@@ -69,8 +70,10 @@ Vagrant::Config.run do |config|
     chef.add_recipe "timezone"
     chef.add_recipe "mutillidae"
     chef.add_recipe "webgoat"
+    chef.add_recipe "bricks"
     # You may also specify custom JSON attributes:
     chef.json = {
+      :host => host_ip,
       :tz => "America/Santiago",
       :mysql => {
         :server_root_password => "dba123"

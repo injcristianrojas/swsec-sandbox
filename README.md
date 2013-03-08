@@ -1,6 +1,6 @@
-# Sandbox para Capacitación en Seguridad de Software #
+# Sandbox para Capacitación en Seguridad de Software
 
-## Introducción ##
+## Introducción
 
 El presente proyecto consiste en una máquina virtual linux que contiene
 herramientas web débiles a propósito, con el objeto de ser utilizada
@@ -10,10 +10,12 @@ En este minuto, incluye los siguientes proyectos:
 
 * [OWASP Mutillidae](http://www.irongeek.com/i.php?page=security/mutillidae-deliberately-vulnerable-php-owasp-top-10):
 Aplicación PHP+MySQL que implementa el [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project).
+* [OWASP Bricks](http://sechow.com/bricks/): Aplicación PHP+MySQL que permite ayudar a los estudiantes con
+vulnerabilidades típicas (llamadas Bricks)
 * [OWASP WebGoat](https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project): Aplicación JEE especial para
 clases de seguridad de aplicaciones.
 
-## Requerimientos del sistema ##
+## Requerimientos del sistema
 
 Para su ejecución, se requiere tener instalado el siguiente software:
 
@@ -22,25 +24,25 @@ Para su ejecución, se requiere tener instalado el siguiente software:
 
 Ambos software se encuentran disponibles tanto para Windows, como para Mac, como para Linux.
 
-### Windows ###
+### Windows
 
 Para instalar VirtualBox en Windows, bájelo desde <http://www.virtualbox.org>. Para instalar Vagrant,
 baje el paquete .msi desde <http://downloads.vagrantup.com/>.
 
-### Linux ###
+### Linux
 
 Las instrucciones aquí indicadas son para Ubuntu. Para otras distribuciones Linux utilice el sistema
 de paquetes que estas provee. Instale VirtualBox y Ruby utilizando desde la linea de comandos
 `sudo apt-get install virtualbox rubygems`. Terminado ese proceso, instale Vagrant utilizando
 `gem install vagrant`. 
 
-### Mac ###
+### Mac
 
 Para instalar VirtualBox en Mac, bájelo desde <http://www.virtualbox.org>. Si ruby se encuentra instalado
 en su equipo, instale Vagrant utilizando `gem install vagrant`. Si no está, baje el paquete .dmg desde
 <http://downloads.vagrantup.com/>.
 
-## Instalación de la máquina virtual ##
+## Instalación de la máquina virtual
 
 En un directorio de su máquina, escriba
 
@@ -65,17 +67,19 @@ y tendrá acceso a la máquina. Para detenerla Usted puede pausarla o apagarla p
 desea pausarla haga `vagrant suspend`. Para iniciarla de nuevo escriba `vagrant resume`. Si desea
 apagarla escriba `vagrant halt`, y para reiniciarla escriba `vagrant reload --no-provision`
 
-## Uso de la máquina virtual ##
+## Uso de la máquina virtual
 
 La dirección IP de la máquina virtual es 33.33.33.100. Si desea acceder a las herramientas
 web vulnerables ingrese a:
 
 * OWASP Mutillidae: http://33.33.33.100/mutillidae/
+* OWASP Bricks: http://33.33.33.100/bricks/
 * OWASP WebGoat: http://33.33.33.100:8080/WebGoat/attack (user/password: guest/guest)
 
-## Licencias ##
+## Licencias
 
 Las licencias del software distribuido son las siguientes:
 
 * OWASP Mutillidae: [Creative Commons Reconocimiento - CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
+* OWASP Bricks: [Licencia Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
 * OWASP WebGoat: [GPL](http://www.gnu.org/licenses/gpl.html) y [LGPL](http://www.gnu.org/licenses/lgpl.html)

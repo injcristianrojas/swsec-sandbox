@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>OWASP Bricks Installation</title>  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="../stylesheets/foundation.css">
+  -->  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../stylesheets/foundation.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../stylesheets/app.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <script src="../javascripts/modernizr.foundation.js"></script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- Header and Nav -->
+
+  <div class="row">
+    <div class="three columns">
+      <h1><a href="../"><img src="../images/bricks.jpg" /></a></h1>
+    </div>
+    <div class="nine columns">
+      <ul class="nav-bar right">
+        <li><a href="../index.php">Home</a></li>
+		<li><a href="../download.html">Download</a></li>
+        <li><a href="../docs/">Docs</a></li>
+        <li><a href="http://owaspbricks.blogspot.com/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- End Header and Nav -->
+  
+  <div class="row">
+    <div class="eight columns">
+
+	    <h4>Bricks Documentation</h4>
+      </div>
+      </div>
+	  
+	  
+  <div class="row">
+    <div class="twelve columns">
+    <div class="three columns" style="padding: 0 0px;">
+	<ul class="nav-bar vertical">
+  <li><a href="index.php">Getting started</a></li>
+  <li class="active"><a href="installation.html">Installation</a></li>
+  <li class="has-flyout">
+    <a href="login-pages.html">Login pages</a>
+    <a href="login-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout">
+      <h5><a href="login-pages.html">Login pages</a></h5>
+      <div class="row">
+        <div class="six columns">
+          <div style="line-height:2.4;"><a href="login-1.html"><b>Login #1</b></a><br/><br/></div>
+        </div>
+        <div class="six columns">
+          <div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="has-flyout">
+    <a href="file-upload-pages.html">File upload pages</a>
+    <a href="file-upload-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout">
+      <h5><a href="file-upload-pages.html">File upload pages</a></h5>
+      <div class="row">
+        <div class="six columns">
+			<div style="line-height:2.4;"><a href="file-upload-1.html"><b>Upload #1</b></a><br/></div>
+        </div>
+        <div class="six columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="has-flyout">
+    <a href="content-pages.html">Content pages</a>
+    <a href="content-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout" style="width: 400px;">
+      <h5><a href="content-pages.html">Content pages</a></h5>
+      <div class="row">
+        <div class="four columns">
+			<div style="line-height:2.4;"><a href="content-page-1.html"><b>Content #1</b></a><br/></div>
+        </div>
+        <div class="four columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+        <div class="four columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+	
+	</div>
+	<div class="nine columns">	
+	<h4>Installation</h4>
+	<p><ol class="disc">
+	<li>uWAMP</li>
+	<li>Bricks</li>
+	<li>Mantra</li>
+	</ol>
+	</p>
+	<p>
+	<h6>1. uWAMP</h6>
+	<ul class="disc">
+	<li>Get <a href="http://www.uwamp.com/?page=download">UWAMP</a>. There are three options:
+	<ul class="disc">
+	<li><a href="http://www.uwamp.com/file/UwAmp.exe">Exe/Install</a>: Around 20 MB and has an installer. It can be installed just like installing any other software.</li>
+	<li><a href="http://www.uwamp.com/file/UwAmp.rar">Portable RAR</a>: Around 30 MB, portable. No installation needed, just extract and run. <a href="http://www.7-zip.org/">7-Zip</a> is a good software for handling RAR files.</li>
+	<li><a href="http://www.uwamp.com/file/UwAmp.zip">Portable ZIP</a>: Around 55 MB, portable. No installation needed, just extract and run.</li>
+	</ul></li>	</ul>
+	<h6>2. Bricks</h6>
+	<ul class="disc">
+	<li>Download <a href="http://sechow.com/bricks/download.html">Bricks</a> and extract it.</li>	
+	<li>Copy the <span style="color:orange">bricks</span> folder into the <span style="color:blue">UwAmp\www</span> directory.</li>	
+	<li>Run <span style="color:orange">uWAMP.exe</span> and <span style="color:orange">Start</span> running the server.</li>	
+	<li>Create a new database for Bricks:
+	<ul class="disc">
+	<li>Click on the <span style="color:orange">PHPMyAdmin</span> button on the UWAMP interface, or go to <span style="color:blue">http://&lt;your_ip&gt;/mysql/</span> on browser.</li>
+	<li>Any name can be used for database. For example: <span style="color:orange">bricks</span>. Fill up the name and click on <span style="color:orange">Create</span> button.</li>
+	</ul></li>
+	<li>Click on the <span style="color:orange">www Site</span> button on the UWAMP interface, or go to <span style="color:blue">http://&lt;your_ip&gt;/bricks/</span> on browser.</li>
+	<li>Bricks will redirect automatically to <span style="color:blue">http://&lt;your_ip>/bricks/config/</span>.</li>
+	<li>Fill in the configuration details:
+	<ul class="disc">
+	<li>Database username: <b>root</b></li>
+	<li>Database password: <b>root</b> in uWAMP. Keep it blank in the xase of XAMPP</li>
+	<li>Database name: <b>bricks</b></li>
+	<li>Database host: <b>localhost</b></li>
+	<li>Show executed commands: <b>checked by default</b></li>
+	</ul>
+	<li>Click on <span style="color:orange">Submit</span> button and a file, <span style="color:orange">LocalSettings.php</span>, will get downloaded. Place this file in the <span style="color:blue">UwAmp\www</span> directory.</li>
+	<li>Refresh <span style="color:blue">http://&lt;your_ip&gt;/bricks/config/</span> page</li>
+	<li>Click on <span style="color:orange">Setup/reset database</span></li>
+	<li>Installation finished. Bricks will be ready at <span style="color:blue">http://&lt;your_ip&gt;/bricks/</span></li>
+	</ul>
+	<h6>2. Mantra</h6>
+	<ul class="disc">
+	<li>Download <a href="http://www.getmantra.com/owasp-mantra.html">Mantra</a>. Extract it and run it</li>
+	</ul>
+	</p>
+    </div>
+    </div>
+  </div>
+  
+ 
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="six columns">
+          <p>OWASP Bricks</p>
+        </div>
+        <div class="six columns">
+          <div class="right">
+           <a href="http://www.facebook.com/OWASPBricks"><img src="../images/Facebook.png"/></a>&nbsp;<a href="https://twitter.com/OWASPBricks"><img src="../images/Twitter.png"/></a>&nbsp;<a href="https://sourceforge.net/p/owaspbricks/"><img src="../images/Sourceforge.png"/></a>&nbsp;<a href="https://www.owasp.org/index.php/OWASP_Bricks"><img src="../images/owasp.png"/></a>&nbsp;<a href="http://gplus.to/OWASPBricks"><img src="../images/Google+.png"/></a>&nbsp;<a href="https://www.youtube.com/OWASPBricks"><img src="../images/YouTube.png"/></a>&nbsp;<a href="http://owaspbricks.blogspot.com/"><img src="../images/Blogger.png"/></a>
+		</div> 		
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+	
+	
+	
+  </div>
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="../javascripts/jquery.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="../javascripts/jquery.placeholder.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.topbar.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.joyride.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.clearing.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="../javascripts/app.js"></script>
+
+</body>
+</html>

