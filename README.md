@@ -12,8 +12,6 @@ En este minuto, incluye los siguientes proyectos:
 Aplicación PHP+MySQL que implementa el [OWASP Top 10](https://www.owasp.org/index.php/Category:OWASP_Top_Ten_Project).
 * [OWASP Bricks](http://sechow.com/bricks/): Aplicación PHP+MySQL que permite ayudar a los estudiantes con
 vulnerabilidades típicas (llamadas Bricks)
-* [OWASP WebGoat](https://www.owasp.org/index.php/Category:OWASP_WebGoat_Project): Aplicación JEE especial para
-clases de seguridad de aplicaciones.
 
 ## Requerimientos del sistema
 
@@ -74,7 +72,6 @@ web vulnerables ingrese a:
 
 * OWASP Mutillidae: http://33.33.33.100/mutillidae/
 * OWASP Bricks: http://33.33.33.100/bricks/
-* OWASP WebGoat: http://33.33.33.100:8080/WebGoat/attack (user/password: guest/guest)
 
 ## Licencias
 
@@ -82,4 +79,3 @@ Las licencias del software distribuido son las siguientes:
 
 * OWASP Mutillidae: [Creative Commons Reconocimiento - CompartirIgual 3.0](http://creativecommons.org/licenses/by-sa/3.0/)
 * OWASP Bricks: [Licencia Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
-* OWASP WebGoat: [GPL](http://www.gnu.org/licenses/gpl.html) y [LGPL](http://www.gnu.org/licenses/lgpl.html)

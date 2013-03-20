@@ -69,7 +69,6 @@ Vagrant::Config.run do |config|
     chef.add_recipe "basic-config"
     chef.add_recipe "timezone"
     chef.add_recipe "mutillidae"
-    chef.add_recipe "webgoat"
     chef.add_recipe "bricks"
     # You may also specify custom JSON attributes:
     chef.json = {
@@ -77,20 +76,6 @@ Vagrant::Config.run do |config|
       :tz => "America/Santiago",
       :mysql => {
         :server_root_password => "dba123"
-      },
-      :tomcat => {
-        :roles => [
-          'tomcat',
-          'webgoat_basic',
-          'webgoat_admin',
-          'webgoat_user'
-        ],
-        :users => [
-          ['tomcat', 'tomcat', 'tomcat'],
-          ['guest', 'guest', 'webgoat_user'],
-          ['webgoat', 'webgoat', 'webgoat_admin'],
-          ['basic', 'basic', 'webgoat_user,webgoat_basic']
-        ]
       }
     }
   end
