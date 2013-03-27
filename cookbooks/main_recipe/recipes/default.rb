@@ -1,0 +1,5 @@
+include_recipe 'apt'
+include_recipe 'basic-config'
+include_recipe 'timezone'
+include_recipe 'mutillidae'
+include_recipe 'bricks'

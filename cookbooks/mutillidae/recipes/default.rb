@@ -12,7 +12,7 @@ script "mutillidae_install" do
   user "root"
   cwd "/tmp"
   code <<-EOH
-  cp -rf /vagrant_folder/mutillidae /var/www/mutillidae
+  cp -rf /shared_folder/mutillidae /var/www/mutillidae
   sudo chmod 755 -R /var/www/mutillidae
   EOH
 end

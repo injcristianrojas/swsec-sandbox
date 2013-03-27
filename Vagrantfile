@@ -2,6 +2,9 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
+  
+  chef_json = JSON.parse(File.read(File.dirname(__FILE__) + "/chef-prov.json"))
+
   # All Vagrant configuration is done here. The most common configuration
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
@@ -20,8 +23,7 @@ Vagrant::Config.run do |config|
   # via the IP. Host-only networks can talk to the host machine as well as
   # any other machines on the same network, but cannot be accessed (through this
   # network interface) by any external networks.
-  host_ip = "33.33.33.100"
-  config.vm.network :hostonly, host_ip
+  config.vm.network :hostonly, chef_json["host"]
 
   # Assign this VM to a bridged network, allowing you to connect directly to a
   # network using the host's network device. This makes the VM appear as another
@@ -64,20 +66,9 @@ Vagrant::Config.run do |config|
   # to this Vagrantfile), and adding some recipes and/or roles.
   #
   config.vm.provision :chef_solo do |chef|
-    chef.cookbooks_path = "cookbooks"
-    chef.add_recipe "apt"
-    chef.add_recipe "basic-config"
-    chef.add_recipe "timezone"
-    chef.add_recipe "mutillidae"
-    chef.add_recipe "bricks"
-    # You may also specify custom JSON attributes:
-    chef.json = {
-      :host => host_ip,
-      :tz => "America/Santiago",
-      :mysql => {
-        :server_root_password => "dba123"
-      }
-    }
+    chef.cookbooks_path = ["cookbooks"]
+    chef.add_recipe "main_recipe"
+    chef.json.merge!(chef_json)
   end
 
   # Enable provisioning with chef server, specifying the chef server URL,

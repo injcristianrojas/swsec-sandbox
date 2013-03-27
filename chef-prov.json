@@ -1,0 +1,13 @@
+{
+  "run_list": [
+    "recipe[main_recipe]"
+  ],
+  "host": "33.33.33.100",
+  "tz": "America/Santiago",
+  "mysql": {
+    "server_root_password": "dba123"
+  }
+}
+
+
+

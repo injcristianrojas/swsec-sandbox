@@ -10,7 +10,7 @@ script "bricks_install" do
   user "root"
   cwd "/tmp"
   code <<-EOH
-  cp -rf /vagrant_folder/bricks /var/www/bricks
+  cp -rf /shared_folder/bricks /var/www/bricks
   chmod 755 -R /var/www/bricks
   chmod 777 /var/www/bricks/upload-1/uploads/
   EOH
